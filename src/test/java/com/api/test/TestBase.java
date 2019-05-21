@@ -1,4 +1,4 @@
-package com.api;
+package com.api.test;
 
 import com.api.core.utils.*;
 import io.restassured.http.Method;
