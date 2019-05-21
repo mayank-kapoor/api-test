@@ -1,6 +1,5 @@
 package com.api.test;
 
-import com.api.TestBase;
 import com.api.core.utils.*;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;

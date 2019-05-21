@@ -15,7 +15,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/apitest.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/api-testNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
