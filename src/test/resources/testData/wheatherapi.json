@@ -1,0 +1,36 @@
+{
+  "verifyStatusCodeForLatLonApi": [
+    {
+      "testname": "Verify Status Code is 200",
+      "requestObj": {
+        "lat": 40.730610,
+        "lon": -73.935242,
+        "APPID": "bdba9ebcdfef89b6450fbd15610f4b73"
+      }
+    }],
+  "verifyLatLonAsPerRequest": [
+    {
+      "testname": "Verify Lat Lon in Response is same as sent in request",
+      "requestObj": {
+        "lat": 40.730610,
+        "lon": -73.935242,
+        "APPID": "bdba9ebcdfef89b6450fbd15610f4b73"
+      }
+    }],
+  "verifyStatusCodeForZipCodeApi": [
+    {
+      "testname": "Verify Status Code is 200",
+      "requestObj": {
+        "zip": 94040,
+        "APPID": "bdba9ebcdfef89b6450fbd15610f4b73"
+      }
+    }],
+  "getTheWeatherObject": [
+    {
+      "testname": "Get the weather Object From Response",
+      "requestObj": {
+         "zip": 94040,
+         "APPID": "bdba9ebcdfef89b6450fbd15610f4b73"
+      }
+    }]
+}

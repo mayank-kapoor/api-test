@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="API Test Suite" verbose="1" >
+
+    <listeners>
+        <listener
+                class-name="com.api.core.reporting.ExtentTestNGITestListener">
+        </listener>
+    </listeners>
+    <test name="Api Tests">
+        <classes>
+            <class name="com.api.test.WheatherApiTest"/>
+        </classes>
+    </test>
+ </suite>
