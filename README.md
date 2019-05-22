@@ -28,7 +28,9 @@ Import the generated project into your IDE.
 Open the project in your IDE and run the tests contained in one of the aforementioned test classes as you would a testNg test.
 
 ```
+
 ## Reports
+
 ```
 Html Reports at the end of execution is available in /target folder with the name `extent.html'
 with test name, test status, test data and screenshots for failures
@@ -39,8 +41,7 @@ Sample Report Screenshot
 ![alt text](./img/example-report/sample-report.png?raw=true "Sample Report")
 
 
-
-##CI/CD
+## CI/CD
 
 ```
 Can be directely integrated with CI/CD tools like Jenkins, Travis.CircleCI for deployement and 
