@@ -21,7 +21,8 @@ To compile and run the tests from the command line enter the command:
 
 mvn clean test
 
-#DEBUG TESTTS
+#DEBUG TESTS
+
 Import the generated project into your IDE.
 
 Open the project in your IDE and run the tests contained in one of the aforementioned test classes as you would a testNg test.
@@ -38,7 +39,9 @@ Sample Report Screenshot
 ![alt text](./img/example-report/sample-report.png?raw=true "Sample Report")
 
 
+
 ##CI/CD
+
 ```
 Can be directely integrated with CI/CD tools like Jenkins, Travis.CircleCI for deployement and 
 send notifications on Slack, PagerDuty.
@@ -50,5 +53,8 @@ send notifications on Slack, PagerDuty.
 
 ## Contributing
 
-```Pull requests and feedbacks are welcome.Please make sure to update tests as appropriate.
+```
+
+Pull requests and feedbacks are welcome.Please make sure to update tests as appropriate.
+
 ```
