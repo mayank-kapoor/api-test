@@ -1,9 +1,8 @@
 package com.api.core.utils;
 
-import io.restassured.http.Method;
 import lombok.Data;
 
-
+import io.restassured.http.Method;
 import java.util.Map;
 
 @Data
