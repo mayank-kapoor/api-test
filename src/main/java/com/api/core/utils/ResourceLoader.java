@@ -42,9 +42,9 @@ public class ResourceLoader extends Base {
         JSONArray finalJsonArray = new JSONArray();
         String includePattern = System.getProperty("dataType");
 
-        for(Object filteredObj:testCaseJsonArray){
-            JSONObject filteredJSONObj =(JSONObject)filteredObj;
-            if(filteredJSONObj!=null && filteredJSONObj.get("dataType").toString().equalsIgnoreCase(includePattern))
+        for (Object filteredObj : testCaseJsonArray) {
+            JSONObject filteredJSONObj = (JSONObject) filteredObj;
+            if (filteredJSONObj != null && filteredJSONObj.get("dataType").toString().equalsIgnoreCase(includePattern))
                 finalJsonArray.put(filteredJSONObj);
         }
         Object[][] testDataObj = new Object[finalJsonArray.length()][1];

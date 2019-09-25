@@ -30,39 +30,30 @@ public class FIlteredApiTest extends TestBase {
 
     }
 
-    /** +
+    /**
+     * +
      *
      * @param testContext
      * @param testDataObj
      */
     @Test(priority = 1, dataProvider = "getFilteredTestData", dataProviderClass = ResourceLoader.class)
-    public void verifyStatusCode(ITestContext testContext,JSONObject testDataObj) {
+    public void verifyStatusCode(ITestContext testContext, JSONObject testDataObj) {
         Map<String, Object> pathParams = new HashMap<>();
-        if(testDataObj!=null)
-        {
+        if (testDataObj != null) {
             pathParams.put("postId", testDataObj.getJSONObject(RequestConstants.REQUEST_OBJ).get("postId"));
             Request apiRequest = buildApiRequest(pathParams);
-            System.out.println("Request is :"+apiRequest.getBaseUrl()+apiRequest.getApiPath()+apiRequest.getPathParameters());
+            System.out.println("Request is :" + apiRequest.getBaseUrl() + apiRequest.getApiPath() + apiRequest.getPathParameters());
 
             try {
                 Response apiResponse = requestExecutor.executeRequest(apiRequest);
-                testContext = getiTextContextAttribs(testContext, apiRequest, apiResponse,testDataObj);
+                testContext = getiTextContextAttribs(testContext, apiRequest, apiResponse, testDataObj);
                 assertThat("status code is not 200", apiResponse.getStatusCode(), is(equalTo(ResponseConstants.STATUS_CODE_OK)));
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-
-
-
     }
-
-
-
-
-
 
     @AfterClass(alwaysRun = true)
     public void cleanup() {

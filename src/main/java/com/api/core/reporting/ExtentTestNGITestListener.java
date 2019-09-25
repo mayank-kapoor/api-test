@@ -12,7 +12,6 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 
-
 public class ExtentTestNGITestListener implements ITestListener {
 
     private static ExtentReports extent = ExtentManager.createInstance("extent.html");
@@ -73,21 +72,21 @@ public class ExtentTestNGITestListener implements ITestListener {
     private synchronized void appendTestInfoInReport(Status testStatus, ITestResult iTestResult) {
         String requestUrl = null;
         Request request = (Request) iTestResult.getTestContext().getAttribute(RequestConstants.REQUEST);
-        Response response = (Response)  iTestResult.getTestContext().getAttribute(ResponseConstants.RESPONSE);
+        Response response = (Response) iTestResult.getTestContext().getAttribute(ResponseConstants.RESPONSE);
         Long timer = (Long) iTestResult.getTestContext().getAttribute(ResponseConstants.RESPONSE_TIME);
-        requestUrl = request.getBaseUrl() +request.getApiPath();
+        requestUrl = request.getBaseUrl() + request.getApiPath();
         if (request.getPathParameters() != null)
             requestUrl += request.getPathParameters().toString();
 
         if (request.getQueryParameters() != null)
             requestUrl += request.getQueryParameters().toString();
-        test.get().log(testStatus, "Request Endpoint:"+ requestUrl);
-        test.get().log(Status.INFO,"Request Type : " + request.getRequestType().name());
-        test.get().log(Status.INFO, "Response Time : " + String.valueOf(timer)+"ms");
-        if(request.getRequestBody()!=null)
-            test.get().log(Status.INFO,"Request Body: " + request.getRequestBody());
-        if(context.getAttribute("test-data")!=null)
-            test.get().log(Status.INFO,"Test Data: " + context.getAttribute("test-data").toString());
+        test.get().log(testStatus, "Request Endpoint:" + requestUrl);
+        test.get().log(Status.INFO, "Request Type : " + request.getRequestType().name());
+        test.get().log(Status.INFO, "Response Time : " + String.valueOf(timer) + "ms");
+        if (request.getRequestBody() != null)
+            test.get().log(Status.INFO, "Request Body: " + request.getRequestBody());
+        if (context.getAttribute("test-data") != null)
+            test.get().log(Status.INFO, "Test Data: " + context.getAttribute("test-data").toString());
         if (testStatus.equals(Status.FAIL))
             test.get().log(testStatus, "Failure Reason : " + iTestResult.getThrowable().fillInStackTrace());
         test.get().log(testStatus, response.prettyPrint());

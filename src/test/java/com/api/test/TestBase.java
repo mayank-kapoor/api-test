@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase{
+public class TestBase {
 
 
     Properties props = new Properties();
@@ -24,7 +24,8 @@ public class TestBase{
         }
     }
 
-    /** +
+    /**
+     * +
      *
      * @param pathParams
      * @return
@@ -38,7 +39,8 @@ public class TestBase{
         }).buildRequestObject();
     }
 
-    /** +
+    /**
+     * +
      *
      * @param context
      * @param request
