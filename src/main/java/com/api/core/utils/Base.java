@@ -11,7 +11,7 @@ public class Base {
     protected String covertFileToString(String fileName) {
         String fileContent = null;
         try {
-            InputStream fileStream = this.getClass().getResourceAsStream(fileName);
+            InputStream fileStream = getClass().getResourceAsStream(fileName);
             fileContent = IOUtils.toString(fileStream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

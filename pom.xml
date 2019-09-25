@@ -18,6 +18,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
+                    <systemPropertyVariables>
+                        <dataType>{{dataType}}</dataType>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/api-testNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
@@ -87,6 +90,11 @@
             <artifactId>rest-assured</artifactId>
             <version>4.0.0</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1.1</version>
         </dependency>
     </dependencies>
 

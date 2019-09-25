@@ -3,6 +3,7 @@ package com.api.test;
 import com.api.core.utils.*;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
+import org.json.JSONObject;
 import org.testng.ITestContext;
 
 import java.io.IOException;
@@ -25,14 +26,14 @@ public class TestBase{
 
     /** +
      *
-     * @param queryParams
+     * @param pathParams
      * @return
      */
-    public Request buildApiRequest(Map<String, Object> queryParams) {
+    public Request buildApiRequest(Map<String, Object> pathParams) {
         return new RequestBuilder().With(($) -> {
             $.BaseUrl = props.getProperty("api.url");
             $.ApiPath = props.getProperty("api.path");
-            $.QueryParameters = queryParams;
+            $.PathParams = pathParams;
             $.RequestType = Method.GET;
         }).buildRequestObject();
     }
@@ -44,11 +45,13 @@ public class TestBase{
      * @param response
      * @return
      */
-    protected ITestContext getiTextContextAttribs(ITestContext context, Request request, Response response) {
+    protected ITestContext getiTextContextAttribs(ITestContext context, Request request, Response response, JSONObject testDataObj) {
         context.setAttribute(RequestConstants.REQUEST, request);
         context.setAttribute(ResponseConstants.RESPONSE, response);
         context.setAttribute(Constants.STATUS_CODE, response.getStatusCode());
         context.setAttribute(ResponseConstants.RESPONSE_TIME, response.getTimeIn(TimeUnit.MILLISECONDS));
+        context.setAttribute("test-data", testDataObj);
+
         return context;
     }
 

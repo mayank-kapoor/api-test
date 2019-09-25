@@ -12,7 +12,7 @@ public class RequestBuilder {
     }
 
     public Map<String, Object> QueryParameters;
-
+    public Map<String, Object> PathParams;
     public String ApiPath;
     public Method RequestType;
     public Map<String, String> Headers;
@@ -35,7 +35,7 @@ public class RequestBuilder {
 
     public Request buildRequestObject() {
 
-        return new Request(BaseUrl,ApiPath, RequestType, Headers, RequestBody, QueryParameters,ContentType
+        return new Request(BaseUrl,ApiPath, RequestType, Headers, RequestBody, QueryParameters,PathParams,ContentType
                 );
     }
 

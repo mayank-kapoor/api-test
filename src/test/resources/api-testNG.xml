@@ -9,7 +9,7 @@
     </listeners>
     <test name="Api Tests">
         <classes>
-            <class name="com.api.test.WheatherApiTest"/>
+            <class name="com.api.test.FIlteredApiTest"/>
         </classes>
     </test>
 

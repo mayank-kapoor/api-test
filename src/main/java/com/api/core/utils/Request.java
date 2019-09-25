@@ -8,6 +8,7 @@ import java.util.Map;
 @Data
 public class Request {
     private Map<String, Object> queryParameters;
+    private Map<String, Object> pathParameters;
     private String apiPath;
     private String baseUrl;
     private Method requestType;
@@ -18,7 +19,7 @@ public class Request {
 
     public Request(String baseUrl,String apiPath, Method requestType,
                    Map<String, String> headers,
-                   String requestBody, Map<String, Object> queryParameters, String contentType
+                   String requestBody, Map<String, Object> queryParameters, Map<String, Object> pathParameters, String contentType
     ) {
         this.baseUrl = baseUrl;
         this.requestType = requestType;
@@ -27,6 +28,7 @@ public class Request {
         this.contentType = contentType;
         this.requestBody = requestBody;
         this.queryParameters = queryParameters;
+        this.pathParameters = pathParameters;
 
     }
 

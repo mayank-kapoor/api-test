@@ -22,7 +22,7 @@ public class RequestExecutor {
         System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
         System.setProperty(
                 "jdk.tls.client.protocols", "TLSv1,TLSv1.1,TLSv1.2");
-        RestAssured.useRelaxedHTTPSValidation();
+       // RestAssured.useRelaxedHTTPSValidation();
         RequestSpecification requestSpecification = generateRequestSpec(request);
         Response response = given().spec(requestSpecification).request(request.getRequestType());
         response = checkRedirection(response, request.getRequestType(), requestSpecification);
@@ -55,6 +55,9 @@ public class RequestExecutor {
         }
         if (request.getQueryParameters() != null) {
             builder.addQueryParams(request.getQueryParameters());
+        }
+        if (request.getPathParameters() != null) {
+            builder.addPathParams(request.getPathParameters());
         }
 
         if (request.getBaseUrl() != null) {

@@ -1,0 +1,34 @@
+{
+  "verifyStatusCode": [
+    {
+      "testname": "Verify Status Code is 200",
+      "data": [
+        {
+          "dataType" : "managed",
+          "requestObj": {
+            "postId": 1
+          }
+        },
+        {
+          "dataType" : "unmanaged",
+          "requestObj": {
+            "postId": 2
+          }
+        },
+        {
+          "dataType" : "unmanaged",
+          "requestObj": {
+            "postId": 3
+          }
+        },
+        {
+          "dataType" : "managed",
+          "requestObj": {
+            "postId": 4
+          }
+        }
+      ]
+
+    }]
+
+}
